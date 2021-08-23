@@ -38,7 +38,10 @@ public class Question1 {
             int value = divisor;
             int quotient = 1;
 
-            // 优化：当除数的已经小于 最大负数/2 且 被除数大于2倍的value值时，已经没必要进行判断了
+            // 优化：当除数的已经小于 最大负数的一半（用绝对值理解比较容易，就是除数已经超过被除数的一半多，不能商2，只能商1）
+            // 且 被除数大于2倍的value值时，已经没必要进行判断了
+            // 首先要理解解体思路，value + value相当于一个倍数叠加的过程，被除数大于2倍的value值就停止循环是一种优化的策略（详见思路）
+            // 此处的被除数是一个优化后的被除数，而非原被除数
             while (value >= 0xc0000000 && dividend <= value + value) {
                 quotient += quotient;
                 value += value;
