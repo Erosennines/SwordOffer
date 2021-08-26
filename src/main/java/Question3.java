@@ -37,13 +37,13 @@ public class Question3 {
     }
 
     public static void main(String[] args) {
-        int[] arr1 = countBits1(9);
+//        int[] arr1 = countBits1(9);
 //        int[] arr2 = countBits2(9);
-//        int[] arr3 = countBits3(9);
+        int[] arr3 = countBits3(9);
 
-        System.out.println(Arrays.toString(arr1));
+//        System.out.println(Arrays.toString(arr1));
 //        System.out.println(Arrays.toString(arr2));
-//        System.out.println(Arrays.toString(arr3));
+        System.out.println(Arrays.toString(arr3));
     }
 }
 
@@ -57,4 +57,7 @@ public class Question3 {
         多1。
         不管i中的二进制形式中有多少个1，上述代码只根据O(1)的时间就能得出，因此时间复杂度为O(n)
     countBits3
+        还有另一种思路。如果一个正整数i是一个偶数，那么i相当于将“i/2”再左移一位的结果。如果i是奇数，那么i相当于将“i/2”左移一位后再将
+        最右边一位设为1的结果，因此奇数i的二进制形式中1的个数比“i/2”的1的个数多1.
+        这种解法的时间复杂度为O(n)
  */
